@@ -71,6 +71,7 @@ jobs:
         run: npm run build
 
       - name: Commit dist to public mirror
+        id: dist_commit
         run: |
           rsync -a --delete src-repo/dist/ mirror/dist/
           cd mirror
@@ -79,10 +80,26 @@ jobs:
           git add dist
           if git diff --cached --quiet; then
             echo 'dist unchanged, skip commit'
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
           else
             git commit -m "build: refresh dist $(date -u +%Y%m%dT%H%M%SZ)"
             git push
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Kick CF deploy hook (content changed only)
+        # 两站同源(同一 Notion 库):cn 构建发现内容变化才踢 .org 重建,
+        # 内容不变不浪费 CF 构建额度。前提已验证:dist 无构建时间戳,
+        # 内容不变则逐字节不变。
+        if: steps.dist_commit.outputs.changed == 'true'
+        env:
+          HOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo '::warning::DEPLOY_HOOK_URL not set, skip org rebuild kick'
+            exit 0
+          fi
+          curl -fsS -X POST --max-time 30 "$HOOK_URL" && echo 'org rebuild kicked'
 
       - name: Setup SSH
         run: |

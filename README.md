@@ -1,37 +1,30 @@
 # minspring-build
 
-minspring.cn 的构建与部署管线仓库(PUBLIC)。
+[明之小泉](https://minspring.org) 个人博客的构建产物与自动部署仓库。
 
-## 为什么存在
+## 站点
 
-私有仓库 `astro-notion-blog` 的 GitHub Actions 免费额度(2000 Linux
-分钟/月)已耗尽,deploy 任务被 billing 拦截。**Public 仓库的 Actions
-免费不限量**,因此把"构建+部署"这一重活搬到本仓库执行,源码继续
-留在 private 仓库。
+| 站点 | 域名 | 托管 |
+| :--- | :--- | :--- |
+| 国际站 | <https://minspring.org> | Cloudflare Pages |
+| 国内站 | <http://minspring.cn> | 阿里云（蜀ICP备2026010805号） |
 
-## 工作方式
+## 这个仓库是什么
 
-1. Workflow `deploy.yml`(每日 04:22 北京时间 + 手动触发)用
-   `SOURCE_REPO_TOKEN` checkout private 源码仓库
-2. 以 `SITE_VARIANT=cn CUSTOM_DOMAIN=minspring.cn` 构建
-3. 构建产物 `dist/` 提交回本仓库——"构建内容放 public,代码留
-   private"
-4. rsync 到阿里云服务器,原子切换 `current` 符号链接
+- 存放 minspring.cn 的**构建产物**（`dist/`，全站静态
+  HTML/CSS/JS/图片），以及自动构建部署的 GitHub Actions workflow
+- 网站源码（Astro + Notion 作为内容源）保存在私有仓库，不在此公开
+- 每日自动从 Notion 拉取最新内容重建：**内容有变化**时提交新
+  `dist/` 并部署国内站，同时触发国际站重建；内容无变化则跳过，
+  不产生无意义的构建
 
-## Secrets
+## 部署方式
 
-| 名称 | 用途 |
-| :--- | :--- |
-| SOURCE_REPO_TOKEN | 拉取 private 源码仓库(git checkout) |
-| NOTION_API_SECRET | Notion API 集成 token(构建数据源) |
-| DATABASE_ID | Notion 数据库 ID |
-| CHINA_DEPLOY_KEY | 阿里云部署 SSH 私钥(仅限 rsync 目标目录) |
-| DEPLOY_HOOK_URL | Cloudflare Pages 部署钩子(仅能触发 .org 重建;deploy-org.yml 每日 03:52) |
+GitHub Actions 在海外 runner 构建后，通过 rsync 发布到阿里云服务器
+的 `releases/<id>` + `current` 符号链接目录结构（秒级回滚），服务器
+只做纯静态 nginx 服务，不跑构建。
 
-Fork PR 无法读取 secrets(GitHub 默认安全行为)。
+## 版权
 
-## 相关
-
-- 源码:zhuquanming/astro-notion-blog(private)
-- 线上:<http://minspring.cn(阿里云,纯静态> nginx)
-- 国际站:<https://minspring.org(Cloudflare> Pages)
+`dist/` 中的全部文章内容与站点素材版权归 ZHU Quanming 所有。本仓库
+公开用于构建透明与内容存档，转载请注明出处并附原文链接。

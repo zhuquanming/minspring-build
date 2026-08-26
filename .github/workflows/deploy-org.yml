@@ -1,19 +1,11 @@
-# zhuquanming/minspring-build / .github/workflows/deploy-org.yml
-#
-# minspring.org 每日重建 kicker(pub-reboot-billing 可选优化,2026-08-26 实施):
-# 原.private 仓库 Deploy workflow(03:52 踢 CF Pages deploy hook)被额度拦截,
-# 搬到本 public 仓库后免费不限量。CF Pages 的 push 构建本来就在 CF 侧执行,
-# 本 workflow 只补"每日从 Notion 刷新内容"的定时触发。
-#
-# 安全性:DEPLOY_HOOK_URL 唯一能力=触发 .org 重建,最坏情况=被乱触发刷构建
-# 额度,无数据访问;secrets 加密存储+日志脱敏+fork PR 不可见。
+# 手动触发 minspring.org 重建(Cloudflare Pages deploy hook)的兜底入口。
+# 每日定时重建不在本 workflow——deploy.yml 每日构建时检测 Notion 内容,
+# 发现变化才自动踢 hook(内容不变不浪费 CF 构建额度);日常无需手动跑,
+# 仅在需要强制重建(如改了 CF 配置、构建异常)时手动触发。
 
 name: Deploy ORG (CF hook)
 
 on:
-  schedule:
-    # 03:52 (Beijing UTC+8) 每日,与 .cn 的 04:22 错开
-    - cron: '52 19 * * *'
   workflow_dispatch:
 
 concurrency:
