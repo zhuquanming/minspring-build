@@ -1,0 +1,111 @@
+# zhuquanming/minspring-build / .github/workflows/deploy.yml
+#
+# minspring.cn 构建+部署管线(pub-reboot-billing 选项 d 变体):
+# 本仓库 PUBLIC → Actions 分钟数免费不限量,根治私有仓库 2000 min/月 额度耗尽问题。
+# 源码保持在 private 仓库 astro-notion-blog,用 SOURCE_REPO_TOKEN 拉取构建。
+# 构建产物 dist/ 提交回本仓库(构建内容放 public,代码留 private)。
+# 部署:rsync → 阿里云 → 原子切 current 符号链接(与旧 deploy-cn.yml 同协议)。
+#
+# Secrets(仅本仓库):SOURCE_REPO_TOKEN / NOTION_API_SECRET / DATABASE_ID /
+# CHINA_DEPLOY_KEY。fork PR 拿不到 secrets(GitHub 默认安全行为)。
+#
+# 手动触发:gh workflow run deploy.yml -R zhuquanming/minspring-build
+
+name: Build & Deploy CN
+
+on:
+  schedule:
+    # 04:22 (Beijing UTC+8) 每日从 Notion 重建,错开 .org 的 03:52 构建
+    - cron: '22 20 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cn
+  cancel-in-progress: false
+
+permissions:
+  contents: write # 把构建产物提交回本仓库
+
+jobs:
+  deploy:
+    name: Build CN variant and rsync to Aliyun
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HOST: 120.25.178.1
+      USER: aliadmin
+      ROOT: /var/www/minspring
+    steps:
+      - name: Checkout private source
+        uses: actions/checkout@v4
+        with:
+          repository: zhuquanming/astro-notion-blog
+          token: ${{ secrets.SOURCE_REPO_TOKEN }}
+          ref: main
+          path: src-repo
+          # 不让 private repo 的 token 留在 git 凭据里
+          persist-credentials: false
+
+      - name: Checkout public mirror (this repo)
+        uses: actions/checkout@v4
+        with:
+          path: mirror
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: src-repo/.nvmrc
+          cache: npm
+          cache-dependency-path: src-repo/package-lock.json
+
+      - name: Install dependencies
+        working-directory: src-repo
+        run: npm ci
+
+      - name: Build CN variant
+        working-directory: src-repo
+        env:
+          SITE_VARIANT: cn
+          CUSTOM_DOMAIN: minspring.cn
+          NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
+          DATABASE_ID: ${{ secrets.DATABASE_ID }}
+        run: npm run build
+
+      - name: Commit dist to public mirror
+        run: |
+          rsync -a --delete src-repo/dist/ mirror/dist/
+          cd mirror
+          git config user.name 'minspring-build-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add dist
+          if git diff --cached --quiet; then
+            echo 'dist unchanged, skip commit'
+          else
+            git commit -m "build: refresh dist $(date -u +%Y%m%dT%H%M%SZ)"
+            git push
+          fi
+
+      - name: Setup SSH
+        run: |
+          install -m 600 /dev/null ~/.ssh/id_ed25519
+          echo "${{ secrets.CHINA_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
+
+      - name: Rsync release and switch current
+        run: |
+          RELEASE="$ROOT/releases/${{ github.run_id }}"
+          rsync -az --delete src-repo/dist/ "$USER@$HOST:$RELEASE/"
+          ssh "$USER@$HOST" "
+            set -e
+            ln -sfn '$RELEASE' '$ROOT/current'
+            cd '$ROOT/releases' && ls -1 | sort -n | head -n -5 | xargs -r rm -rf
+          "
+
+      - name: Verify via Host header
+        if: github.event_name != 'schedule'
+        run: |
+          sleep 2
+          curl -fsS -H "Host: minspring.cn" "http://$HOST/" -o /dev/null -w "home %{http_code}\n"
+          echo "--- robots.txt ---"
+          curl -fsS -H "Host: minspring.cn" "http://$HOST/robots.txt" | head -3
+          echo "--- ICP in footer ---"
+          curl -fsS -H "Host: minspring.cn" "http://$HOST/" | grep -o '蜀ICP备[0-9]*号' | head -1
