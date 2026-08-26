@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <!-- 处暑:暑气渐消,禾谷初黄。淡彩背景,特征亮度与纸面保持
+       适度差(可见但柔和),左侧分布山峦/云保证目录列有景可透 -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#faf6e9"/>
+      <stop offset="0.55" stop-color="#f4eed6"/>
+      <stop offset="1" stop-color="#e7eed7"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.84" cy="0.12" r="0.4">
+      <stop offset="0" stop-color="#f4d488" stop-opacity="0.85"/>
+      <stop offset="0.45" stop-color="#f4d488" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#f4d488" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <rect width="1600" height="1000" fill="url(#sun)"/>
+
+  <!-- 远山三层:铺满全宽且上移——TOC 面板悬浮区(视口左上)须有山可透 -->
+  <path d="M0 580 C 200 520 420 552 700 528 C 980 504 1240 544 1600 512 L1600 1000 L0 1000 Z"
+        fill="#d3dfb9" opacity="0.85"/>
+  <path d="M0 660 C 280 606 560 644 860 616 C 1140 590 1380 632 1600 608 L1600 1000 L0 1000 Z"
+        fill="#c5d6a8" opacity="0.85"/>
+  <path d="M0 760 C 300 712 620 748 940 724 C 1220 703 1420 738 1600 718 L1600 1000 L0 1000 Z"
+        fill="#b7cba0" opacity="0.9"/>
+
+  <!-- 云:左右分布,柔白带浅底影 -->
+  <g filter="url(#soft)">
+    <ellipse cx="300" cy="170" rx="170" ry="40" fill="#ffffff" opacity="0.85"/>
+    <ellipse cx="390" cy="205" rx="120" ry="26" fill="#e8e2c9" opacity="0.6"/>
+    <ellipse cx="1150" cy="300" rx="160" ry="36" fill="#ffffff" opacity="0.8"/>
+    <ellipse cx="1240" cy="335" rx="110" ry="24" fill="#e8e2c9" opacity="0.55"/>
+    <ellipse cx="760" cy="120" rx="120" ry="26" fill="#ffffff" opacity="0.7"/>
+    <ellipse cx="90" cy="330" rx="130" ry="28" fill="#ffffff" opacity="0.65"/>
+    <ellipse cx="1450" cy="470" rx="120" ry="24" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- 秋雁南飞:两群,一群落进左列(TOC 悬浮区) -->
+  <g stroke="#7d8266" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.4">
+    <path d="M620 260 q 20 -18 40 0 q 20 -18 40 0"/>
+    <path d="M730 215 q 16 -14 32 0 q 16 -14 32 0"/>
+    <path d="M560 315 q 12 -11 24 0 q 12 -11 24 0"/>
+    <path d="M180 290 q 18 -16 36 0 q 18 -16 36 0"/>
+    <path d="M260 340 q 14 -13 28 0 q 14 -13 28 0"/>
+    <path d="M140 380 q 11 -10 22 0 q 11 -10 22 0"/>
+  </g>
+
+  <!-- 左下禾谷:穗初黄低垂,加强存在感 -->
+  <g stroke="#a98f4e" fill="none" stroke-linecap="round" opacity="0.6">
+    <path d="M130 1000 C 140 840 165 745 210 672" stroke-width="9"/>
+    <path d="M210 672 q -8 -36 10 -62" stroke-width="6"/>
+    <g stroke-width="5">
+      <path d="M212 640 q -22 -10 -28 -34"/>
+      <path d="M214 638 q 2 -26 -9 -43"/>
+      <path d="M216 644 q 24 -11 30 -35"/>
+      <path d="M213 647 q -9 -28 2 -50"/>
+    </g>
+    <path d="M240 1000 C 254 870 282 785 328 722" stroke-width="9"/>
+    <path d="M328 722 q -5 -32 11 -55" stroke-width="6"/>
+    <g stroke-width="5">
+      <path d="M330 692 q -20 -9 -26 -31"/>
+      <path d="M332 690 q 2 -24 -8 -40"/>
+      <path d="M334 696 q 23 -10 29 -32"/>
+    </g>
+    <path d="M60 1000 C 68 880 84 805 116 748" stroke-width="8"/>
+    <path d="M116 748 q -3 -26 9 -45" stroke-width="5"/>
+  </g>
+
+  <!-- 右下草叶 -->
+  <g stroke="#8fa868" fill="none" stroke-linecap="round" opacity="0.55">
+    <path d="M1480 1000 C 1468 870 1445 782 1412 718" stroke-width="8"/>
+    <path d="M1430 1000 C 1442 890 1465 828 1508 772" stroke-width="8"/>
+    <path d="M1545 1000 C 1538 900 1550 838 1578 792" stroke-width="6"/>
+  </g>
+</svg>

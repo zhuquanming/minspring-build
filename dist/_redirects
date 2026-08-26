@@ -1,0 +1,2 @@
+# Legacy RSS URL moved to /feed.xml (proper file extension => correct MIME type)
+/feed /feed.xml 301

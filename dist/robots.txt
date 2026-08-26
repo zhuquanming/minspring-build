@@ -1,0 +1,10 @@
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Googlebot
+Disallow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://minspring.cn/sitemap-index.xml
