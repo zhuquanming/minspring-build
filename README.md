@@ -26,6 +26,7 @@ minspring.cn 的构建与部署管线仓库(PUBLIC)。
 | NOTION_API_SECRET | Notion API 集成 token(构建数据源) |
 | DATABASE_ID | Notion 数据库 ID |
 | CHINA_DEPLOY_KEY | 阿里云部署 SSH 私钥(仅限 rsync 目标目录) |
+| DEPLOY_HOOK_URL | Cloudflare Pages 部署钩子(仅能触发 .org 重建;deploy-org.yml 每日 03:52) |
 
 Fork PR 无法读取 secrets(GitHub 默认安全行为)。
 
