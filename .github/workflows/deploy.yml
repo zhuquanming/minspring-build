@@ -118,12 +118,12 @@ jobs:
             cd '$ROOT/releases' && ls -1 | sort -n | head -n -5 | xargs -r rm -rf
           "
 
-      - name: Verify via Host header
+      - name: Verify live site
         if: github.event_name != 'schedule'
         run: |
           sleep 2
-          curl -fsS -H "Host: minspring.cn" "http://$HOST/" -o /dev/null -w "home %{http_code}\n"
+          curl -fsS "https://minspring.cn/" -o /dev/null -w "home %{http_code}\n"
           echo "--- robots.txt ---"
-          curl -fsS -H "Host: minspring.cn" "http://$HOST/robots.txt" | head -3
+          curl -fsS "https://minspring.cn/robots.txt" | head -3
           echo "--- ICP in footer ---"
-          curl -fsS -H "Host: minspring.cn" "http://$HOST/" | grep -o '蜀ICP备[0-9]*号' | head -1
+          curl -fsS "https://minspring.cn/" | grep -o '蜀ICP备[0-9]*号' | head -1
