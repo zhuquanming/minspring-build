@@ -1,0 +1,36 @@
+# zhuquanming/minspring-build / .github/workflows/deploy-org.yml
+#
+# minspring.org 每日重建 kicker(pub-reboot-billing 可选优化,2026-08-26 实施):
+# 原.private 仓库 Deploy workflow(03:52 踢 CF Pages deploy hook)被额度拦截,
+# 搬到本 public 仓库后免费不限量。CF Pages 的 push 构建本来就在 CF 侧执行,
+# 本 workflow 只补"每日从 Notion 刷新内容"的定时触发。
+#
+# 安全性:DEPLOY_HOOK_URL 唯一能力=触发 .org 重建,最坏情况=被乱触发刷构建
+# 额度,无数据访问;secrets 加密存储+日志脱敏+fork PR 不可见。
+
+name: Deploy ORG (CF hook)
+
+on:
+  schedule:
+    # 03:52 (Beijing UTC+8) 每日,与 .cn 的 04:22 错开
+    - cron: '52 19 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-org
+  cancel-in-progress: false
+
+jobs:
+  curl:
+    name: Kick deploy hook
+    runs-on: ubuntu-latest
+    env:
+      HOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
+    steps:
+      - name: Trigger deploy hook
+        if: ${{ env.HOOK_URL != '' }}
+        run: curl -fsS -X POST --max-time 30 "$HOOK_URL"
+      - name: Skip (hook not configured)
+        if: ${{ env.HOOK_URL == '' }}
+        run: |
+          echo "::warning::DEPLOY_HOOK_URL secret is not set, skipping deploy trigger. Add it via: gh secret set DEPLOY_HOOK_URL -R zhuquanming/minspring-build"
