@@ -33,7 +33,7 @@ jobs:
     timeout-minutes: 20
     env:
       HOST: 120.25.178.1
-      USER: aliadmin
+      USER: deploy
       ROOT: /var/www/minspring
     steps:
       - name: Checkout private source
@@ -108,15 +108,13 @@ jobs:
           echo "${{ secrets.CHINA_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
           ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
 
+      # deploy 用户被服务器 forced-command 锁死为两个动词:
+      # rsync(rrsync 监禁于 /var/www/minspring,须用相对路径)+ 切换脚本
       - name: Rsync release and switch current
         run: |
-          RELEASE="$ROOT/releases/${{ github.run_id }}"
-          rsync -az --delete src-repo/dist/ "$USER@$HOST:$RELEASE/"
-          ssh "$USER@$HOST" "
-            set -e
-            ln -sfn '$RELEASE' '$ROOT/current'
-            cd '$ROOT/releases' && ls -1 | sort -n | head -n -5 | xargs -r rm -rf
-          "
+          RID="${{ github.run_id }}"
+          rsync -az --delete src-repo/dist/ "$USER@$HOST:releases/$RID/"
+          ssh "$USER@$HOST" /usr/local/bin/minspring-switch "/var/www/minspring/releases/$RID"
 
       - name: Verify live site
         if: github.event_name != 'schedule'
