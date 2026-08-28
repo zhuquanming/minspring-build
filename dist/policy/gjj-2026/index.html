@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国机房资〔2026〕10号 · 中央国家机关公积金新政解读</title>
+<meta name="description" content="《关于优化中央国家机关住房公积金政策的通知》逐条拆解、干系人分析、民航企业员工选项与最佳实践、政策背后官方诉求与十五五规划脉络。">
+<style>
+/* ============================================================
+   红头文件 × 数据新闻 · 编辑部风格
+   页面纸面 / 图表卡片两套表面，暗色模式双作用域
+   ============================================================ */
+:root {
+  color-scheme: light;
+  --paper: #f7f4ec;           /* 页面纸面 */
+  --paper-deep: #efe9dc;      /* 纸面加深（侧栏/页脚） */
+  --card: #fcfcfb;            /* 图表表面（验证器基准） */
+  --ink: #1c1a17;             /* 主墨 */
+  --ink-2: #52514e;           /* 次墨 */
+  --ink-3: #898781;           /* 弱墨（轴/标签） */
+  --hairline: #e1e0d9;        /* 发丝线 */
+  --baseline: #c3c2b7;
+  --official-red: #a6192e;    /* 红头红（仅装饰，不进图表） */
+  --red-deep: #7e1423;
+  --red-wash: rgba(166, 25, 46, 0.06);
+  --seal: rgba(166, 25, 46, 0.85);
+  --series-1: #2a78d6;        /* 基准额度 · 蓝 */
+  --series-2: #eb6834;        /* 可上浮 · 橙 */
+  --good-text: #006300;
+  --warn-text: #8a5a00;
+  --border-ring: rgba(11, 11, 11, 0.10);
+  --shadow: 0 1px 2px rgba(28,26,23,.05), 0 8px 28px -12px rgba(28,26,23,.14);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --paper: #121210;
+    --paper-deep: #0d0d0d;
+    --card: #1a1a19;
+    --ink: #f2f0ea;
+    --ink-2: #c3c2b7;
+    --ink-3: #898781;
+    --hairline: #2c2c2a;
+    --baseline: #383835;
+    --official-red: #e06270;
+    --red-deep: #c94b5c;
+    --red-wash: rgba(224, 98, 112, 0.08);
+    --seal: rgba(224, 98, 112, 0.8);
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --good-text: #0ca30c;
+    --warn-text: #d9a13e;
+    --border-ring: rgba(255, 255, 255, 0.10);
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 32px -12px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121210;
+  --paper-deep: #0d0d0d;
+  --card: #1a1a19;
+  --ink: #f2f0ea;
+  --ink-2: #c3c2b7;
+  --ink-3: #898781;
+  --hairline: #2c2c2a;
+  --baseline: #383835;
+  --official-red: #e06270;
+  --red-deep: #c94b5c;
+  --red-wash: rgba(224, 98, 112, 0.08);
+  --seal: rgba(224, 98, 112, 0.8);
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --good-text: #0ca30c;
+  --warn-text: #d9a13e;
+  --border-ring: rgba(255, 255, 255, 0.10);
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 32px -12px rgba(0,0,0,.5);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 纸面纹理：极淡的横向帘纹 */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,0.008) 3px 4px);
+  z-index: 0;
+}
+
+.serif {
+  font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+}
+.fangsong {
+  font-family: "STFangsong", "FangSong", "Songti SC", serif;
+}
+
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ============ 顶部导航 ============ */
+.topnav {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+.topnav .wrap {
+  display: flex; align-items: center; gap: 18px;
+  height: 60px;
+}
+.topnav .doc-no {
+  font-family: "STFangsong", "FangSong", serif;
+  color: var(--official-red);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.topnav nav {
+  display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none;
+  flex: 1; min-width: 0;
+}
+.topnav nav::-webkit-scrollbar { display: none; }
+.topnav nav a {
+  color: var(--ink-2); text-decoration: none;
+  font-size: 14px; padding: 6px 10px; border-radius: 6px;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
+}
+.topnav nav a:hover { color: var(--official-red); background: var(--red-wash); }
+.theme-btn {
+  flex: none; width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--hairline); background: var(--card);
+  color: var(--ink-2); cursor: pointer; font-size: 15px;
+  display: grid; place-items: center;
+  transition: border-color .15s;
+}
+.theme-btn:hover { border-color: var(--official-red); color: var(--official-red); }
+
+/* ============ 红头 hero ============ */
+.hero { padding: 64px 0 48px; }
+.hero .masthead {
+  display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+  border-bottom: 3px solid var(--official-red);
+  padding-bottom: 18px; position: relative;
+}
+.hero .masthead::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -7px;
+  border-bottom: 1px solid var(--official-red);
+}
+.hero .kicker {
+  font-family: "STFangsong", "FangSong", serif;
+  color: var(--official-red); font-size: 15px; letter-spacing: 0.35em;
+}
+.hero h1 {
+  font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 700; line-height: 1.3; letter-spacing: 0.02em;
+  margin-top: 14px;
+}
+.hero .sub {
+  margin-top: 14px; color: var(--ink-2); font-size: 15.5px; max-width: 760px;
+}
+.hero .meta-row {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px;
+}
+.meta-chip {
+  font-size: 13px; color: var(--ink-2);
+  border: 1px solid var(--hairline); border-radius: 999px;
+  padding: 3px 12px; background: var(--card);
+}
+.meta-chip b { color: var(--official-red); font-weight: 600; }
+
+/* 印章 */
+.seal-stamp {
+  position: absolute; right: 0; top: 8px;
+  width: 116px; height: 116px; opacity: .9;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+@media (max-width: 720px) { .seal-stamp { display: none; } }
+
+/* ============ KPI 行 ============ */
+.kpi-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin: 36px 0 8px;
+}
+@media (max-width: 860px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+.stat-tile {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 12px; padding: 18px 20px 16px;
+  box-shadow: var(--shadow);
+}
+.stat-tile .label { font-size: 13px; color: var(--ink-3); }
+.stat-tile .value {
+  font-size: 34px; font-weight: 650; line-height: 1.25;
+  margin-top: 2px; color: var(--ink);
+}
+.stat-tile .value small { font-size: 17px; font-weight: 600; color: var(--ink-2); }
+.stat-tile .delta { font-size: 13px; margin-top: 4px; color: var(--ink-2); }
+.stat-tile .delta.up { color: var(--good-text); }
+
+/* ============ 章节骨架 ============ */
+section.block { padding: 56px 0 8px; }
+.sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+.sec-no {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 15px; color: var(--official-red); letter-spacing: 0.2em;
+  flex: none;
+}
+.sec-head h2 {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 27px; font-weight: 700; letter-spacing: 0.02em;
+}
+.sec-lede { color: var(--ink-2); font-size: 15.5px; max-width: 800px; margin-bottom: 26px; }
+.sec-rule {
+  height: 1px; background: var(--hairline); margin: 0 0 26px;
+  position: relative;
+}
+.sec-rule::before {
+  content: ""; position: absolute; left: 0; top: -1px;
+  width: 64px; height: 3px; background: var(--official-red);
+}
+
+/* ============ 政策六条卡片 ============ */
+.policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 860px) { .policy-grid { grid-template-columns: 1fr; } }
+.policy-card {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 12px; padding: 22px 24px;
+  box-shadow: var(--shadow);
+  position: relative; overflow: hidden;
+}
+.policy-card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--official-red); opacity: .75;
+}
+.policy-card .p-no {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  color: var(--official-red); font-size: 14px; letter-spacing: 0.3em;
+}
+.policy-card h3 { font-size: 18.5px; margin: 6px 0 10px; }
+.policy-card p { font-size: 14.5px; color: var(--ink-2); }
+.policy-card .p-note {
+  margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--hairline);
+  font-size: 13.5px; color: var(--ink-3);
+}
+.policy-card .p-note b { color: var(--ink-2); font-weight: 600; }
+
+/* ============ 图表卡片 ============ */
+.chart-card {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 12px; padding: 24px; margin: 18px 0;
+  box-shadow: var(--shadow);
+}
+.chart-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap; margin-bottom: 6px;
+}
+.chart-title { font-size: 16.5px; font-weight: 650; }
+.chart-sub { font-size: 13px; color: var(--ink-3); margin-bottom: 14px; }
+.view-toggle {
+  display: inline-flex; border: 1px solid var(--hairline); border-radius: 8px;
+  overflow: hidden; font-size: 12.5px;
+}
+.view-toggle button {
+  border: 0; background: transparent; color: var(--ink-3);
+  padding: 5px 12px; cursor: pointer; font-size: 12.5px;
+}
+.view-toggle button.on { background: var(--paper-deep); color: var(--ink); font-weight: 600; }
+
+.legend {
+  display: flex; gap: 18px; flex-wrap: wrap; margin: 4px 0 14px;
+  font-size: 13px; color: var(--ink-2);
+}
+.legend .key { display: inline-flex; align-items: center; gap: 7px; }
+.legend .key i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.legend .key.s1 i { background: var(--series-1); }
+.legend .key.s2 i { background: var(--series-2); }
+
+.chart-svg-wrap { position: relative; }
+.chart-table { display: none; width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.chart-table th, .chart-table td {
+  text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--hairline);
+  font-variant-numeric: tabular-nums;
+}
+.chart-table th:first-child, .chart-table td:first-child { text-align: left; }
+.chart-table th { color: var(--ink-3); font-weight: 600; }
+.chart-card.table-mode .chart-svg-wrap { display: none; }
+.chart-card.table-mode .chart-table { display: table; }
+
+.tooltip {
+  position: fixed; z-index: 99; pointer-events: none;
+  background: var(--card); color: var(--ink);
+  border: 1px solid var(--border-ring);
+  border-radius: 10px; padding: 10px 13px;
+  font-size: 13px; line-height: 1.55;
+  box-shadow: 0 6px 24px -8px rgba(0,0,0,.25);
+  min-width: 150px; opacity: 0; transition: opacity .12s;
+}
+.tooltip .tt-row { display: flex; align-items: center; gap: 8px; }
+.tooltip .tt-row + .tt-row { margin-top: 4px; }
+.tooltip .tt-key { width: 14px; height: 3px; border-radius: 2px; flex: none; }
+.tooltip .tt-val { font-weight: 650; font-variant-numeric: tabular-nums; margin-left: auto; padding-left: 14px; }
+.tooltip .tt-name { color: var(--ink-2); }
+.tooltip .tt-total {
+  margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--hairline);
+  display: flex; justify-content: space-between; font-weight: 650;
+}
+
+/* ============ 时间线 ============ */
+.timeline { position: relative; margin: 10px 0 0; padding-left: 22px; }
+.timeline::before {
+  content: ""; position: absolute; left: 5px; top: 6px; bottom: 6px;
+  width: 2px; background: var(--baseline);
+}
+.tl-item { position: relative; padding: 0 0 26px 18px; }
+.tl-item::before {
+  content: ""; position: absolute; left: -22px; top: 7px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--card); border: 3px solid var(--official-red);
+}
+.tl-item.minor::before { border-color: var(--baseline); }
+.tl-date {
+  font-size: 13px; color: var(--official-red); font-weight: 650;
+  font-variant-numeric: tabular-nums; letter-spacing: 0.03em;
+}
+.tl-item.minor .tl-date { color: var(--ink-3); }
+.tl-item h4 { font-size: 16px; margin: 2px 0 4px; }
+.tl-item p { font-size: 14px; color: var(--ink-2); max-width: 700px; }
+
+/* ============ 干系人矩阵 ============ */
+.matrix-wrap { overflow-x: auto; }
+table.matrix {
+  width: 100%; border-collapse: collapse; font-size: 14px;
+  min-width: 760px;
+}
+table.matrix th {
+  text-align: left; padding: 10px 14px;
+  border-bottom: 2px solid var(--official-red);
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 14.5px; white-space: nowrap;
+}
+table.matrix td {
+  padding: 13px 14px; border-bottom: 1px solid var(--hairline);
+  vertical-align: top; color: var(--ink-2);
+}
+table.matrix td:first-child { color: var(--ink); font-weight: 650; white-space: nowrap; }
+table.matrix tr:hover td { background: var(--red-wash); }
+
+/* ============ 通用提示块 ============ */
+.note {
+  border-left: 3px solid var(--series-1);
+  background: color-mix(in srgb, var(--series-1) 5%, var(--card));
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px; font-size: 14.5px; color: var(--ink-2);
+  margin: 16px 0;
+}
+.note.red { border-left-color: var(--official-red); background: var(--red-wash); }
+.note b { color: var(--ink); }
+
+/* ============ 双栏对照（官方 vs 个人） ============ */
+.duel { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+@media (max-width: 860px) { .duel { grid-template-columns: 1fr; } }
+.duel-col {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 12px; padding: 22px 24px; box-shadow: var(--shadow);
+}
+.duel-col h3 {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 18px; margin-bottom: 4px;
+}
+.duel-col .tagline { font-size: 13px; color: var(--ink-3); margin-bottom: 14px; }
+.duel-col ul { list-style: none; }
+.duel-col li {
+  font-size: 14.5px; color: var(--ink-2);
+  padding: 9px 0 9px 24px; position: relative;
+  border-bottom: 1px solid var(--hairline);
+}
+.duel-col li:last-child { border-bottom: 0; }
+.duel-col li::before {
+  position: absolute; left: 0; top: 9px;
+  font-weight: 700;
+}
+.duel-col.want li::before { content: "官"; color: var(--official-red); font-size: 13px; }
+.duel-col.you li::before { content: "我"; color: var(--series-1); font-size: 13px; }
+.duel-col li b { color: var(--ink); }
+
+/* ============ 行动清单 ============ */
+.action-list { display: grid; gap: 10px; margin-top: 8px; }
+.action-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 10px; padding: 14px 18px;
+}
+.action-item .a-no {
+  flex: none; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--official-red); color: var(--card);
+  display: grid; place-items: center; font-size: 13px; font-weight: 700;
+  margin-top: 2px;
+}
+.action-item .a-body { font-size: 14.5px; color: var(--ink-2); }
+.action-item .a-body b { color: var(--ink); display: block; font-size: 15px; }
+
+/* ============ 避坑表 ============ */
+.pitfall {
+  border: 1px solid var(--hairline); border-radius: 10px;
+  background: var(--card); padding: 16px 18px; margin: 10px 0;
+}
+.pitfall .pf-head {
+  display: flex; align-items: center; gap: 8px; font-weight: 650; font-size: 15px;
+}
+.pitfall .pf-head .x {
+  color: var(--official-red); font-weight: 800; flex: none;
+  width: 20px; height: 20px; border-radius: 5px;
+  background: var(--red-wash); display: grid; place-items: center;
+  font-size: 12px;
+}
+.pitfall p { font-size: 14px; color: var(--ink-2); margin-top: 6px; }
+.pitfall .fix { color: var(--ink); }
+.pitfall .fix::before { content: "✓ "; color: var(--good-text); font-weight: 700; }
+
+/* ============ 页脚 ============ */
+footer {
+  margin-top: 72px; padding: 30px 0 40px;
+  border-top: 1px solid var(--hairline);
+  background: var(--paper-deep);
+  font-size: 13px; color: var(--ink-3);
+  position: relative; z-index: 1;
+}
+footer .wrap { display: grid; gap: 6px; }
+footer a { color: var(--ink-2); }
+
+@media print {
+  .topnav, .theme-btn, .seal-stamp { display: none; }
+  body::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <span class="doc-no serif">国机房资〔2026〕10号</span>
+    <nav id="toc">
+      <a href="#policy">政策拆解</a>
+      <a href="#quota">额度测算</a>
+      <a href="#timeline">政策脉络</a>
+      <a href="#stakeholders">干系人</a>
+      <a href="#aviation">民航员工</a>
+      <a href="#intent">官方诉求</a>
+      <a href="#plan">十五五</a>
+      <a href="#action">行动清单</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" title="切换深浅色" aria-label="切换深浅色">🌓</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="masthead">
+      <div>
+        <div class="kicker">政策解读 · 中央国家机关住房资金管理中心</div>
+        <h1>关于优化中央国家机关<br>住房公积金政策的通知</h1>
+      </div>
+      <svg class="seal-stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="56" fill="none" stroke="var(--seal)" stroke-width="3"/>
+        <path id="sealArc" d="M 60,60 m -42,0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="none"/>
+        <text font-size="12.5" fill="var(--seal)" font-family="Songti SC, STSong, serif" letter-spacing="2.5">
+          <textPath href="#sealArc" startOffset="2%">中央国家机关住房资金管理中心 · 政策研究 ·</textPath>
+        </text>
+        <text x="60" y="57" text-anchor="middle" font-size="17" fill="var(--seal)" font-family="Songti SC, STSong, serif" font-weight="700">公积金</text>
+        <text x="60" y="76" text-anchor="middle" font-size="10" fill="var(--seal)" font-family="Songti SC, STSong, serif">2026 · 08</text>
+      </svg>
+    </div>
+    <p class="sub">为贯彻落实中共中央政治局会议关于稳定房地产市场的要求，资金管理中心一次性推出「提额度、放开上浮、认房放松、带押过户、装修提取」五合一政策包。本文逐条拆解原文，分析每个干系人的关注点与最佳策略，并站在<strong>民航企业缴存职工</strong>的视角给出选项、避坑与红利获取路径。</p>
+    <div class="meta-row">
+      <span class="meta-chip">文号 <b>国机房资〔2026〕10号</b></span>
+      <span class="meta-chip">印发 <b>2026-08-20</b></span>
+      <span class="meta-chip">施行 <b>2026-08-08</b></span>
+      <span class="meta-chip">覆盖 <b>中央国家机关 + 在京央企职工</b></span>
+      <span class="meta-chip">解读生成 <b>2026-08-27</b></span>
+    </div>
+
+    <div class="kpi-row">
+      <div class="stat-tile">
+        <div class="label">双人首套最高额度</div>
+        <div class="value">340<small> 万元</small></div>
+        <div class="delta up">基准 120→240 万（翻倍）+ 上浮 100 万</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">单人首套最高额度</div>
+        <div class="value">180<small> 万元</small></div>
+        <div class="delta up">基准 120 万不变 + 新增上浮 60 万</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">装修提取上限</div>
+        <div class="value">25<small> 万元</small></div>
+        <div class="delta">增值税发票金额 × 50%</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">同房装修提取间隔</div>
+        <div class="value">10<small> 年</small></div>
+        <div class="delta">同一产权人同一住房</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============================================================
+       一、政策拆解
+       ============================================================ -->
+  <section class="block" id="policy">
+    <div class="sec-head"><span class="sec-no">壹</span><h2>六项优化 · 逐条拆解</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">通知正文只有六条，但每条都有隐藏的使用条件。以下按「原文要点 → 使用条件 → 对你的意义」展开。</p>
+
+    <div class="policy-grid">
+      <div class="policy-card">
+        <div class="p-no">第一条</div>
+        <h3>最高贷款额度大幅提高</h3>
+        <p>1 人缴存：首套 <b>120 万</b> / 二套 <b>100 万</b>；夫妻双方均缴存：首套 <b>240 万</b> / 二套 <b>200 万</b>。</p>
+        <div class="p-note"><b>使用条件：</b>「符合缴存条件」——申请时公积金账户处于正常缴存状态，且通常要求连续缴存满一定月数、账户留存一定余额；具体可贷额还受缴存基数/余额公式约束，最高额度只是天花板，不等于人人可贷满。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">第二条</div>
+        <h3>上浮情形 · 可叠加以封顶</h3>
+        <p>城六区户籍购城六区外首套 <b>+20 万</b>；绿色建筑 <b>+40 万</b>；二孩及以上家庭 <b>+40 万</b>。多条件叠加，单人封顶 <b>+60 万</b>、双人封顶 <b>+100 万</b>。</p>
+        <div class="p-note"><b>注意：</b>三项上浮中任意两项即可触及单人封顶（20+40）；双人需三项全满才到 +100 万（20+40+40）。绿色建筑的认定以「符合北京市建筑绿色发展支持政策」为准，购房时需确认项目资质。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">第三条</div>
+        <h3>套数认定放宽</h3>
+        <p>北京市<b>无房或仅 1 套</b>住房的缴存家庭，已结清公积金贷款（含贴息贷款）的，再次购房可申请公积金贷款。</p>
+        <div class="p-note"><b>意义：</b>改善型换房不必先卖再买才能拿公积金贷款；「认房又认贷」实质放松为「认房为主」。名下 1 套 + 贷款已结清 = 再买按二套公积金贷款政策执行。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">第四条</div>
+        <h3>存量房「带押过户」</h3>
+        <p>买卖双方协商一致后，买方公积金贷款（含组合贷）可直接用于<b>清偿卖方未结清的公积金贷款</b>，无需先解押再过户。</p>
+        <div class="p-note"><b>边界：</b>本条只覆盖卖方原有<b>公积金贷款</b>（含组合贷）的清偿；卖方若欠的是纯商贷，需按北京市不动产登记「带押过户」的一般流程另行办理，注意与资金中心版本的区别。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">第五条</div>
+        <h3>新增「装修提取」</h3>
+        <p>凭<b>具备建筑装修装饰工程专业承包资质</b>企业开具的装修增值税发票，提取额度 ≤ 发票金额 <b>50%</b>，上限 <b>25 万</b>；同一产权人同一住房间隔 <b>10 年</b>。</p>
+        <div class="p-note"><b>门槛在发票：</b>必须是「建筑装修装饰工程专业承包资质」企业开具的增值税发票——马路施工队、无资质装修公司的收据/普通发票不行。装修的是「北京市自住住房」。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">第六条</div>
+        <h3>新旧衔接 · 8 月 8 日分水岭</h3>
+        <p>2026-08-08（不含）前<b>已受理未发放</b>的贷款，可自主选择新旧政策；选择新政策需撤销/调整原申请并补材料，<b>审核时效重新计算</b>。8-08（含）后受理的一律执行新政策。</p>
+        <div class="p-note"><b>决策点：</b>在途贷款若能用满新额度（尤其双人 + 上浮），值得撤销重报；但重报=审核重新计时，若网签/放款节奏紧张，需权衡时间成本。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       二、额度测算图表
+       ============================================================ -->
+  <section class="block" id="quota">
+    <div class="sec-head"><span class="sec-no">贰</span><h2>额度测算 · 基准与上浮封顶</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">蓝为基础额度，橙为上浮空间封顶值。四档情景对比：上浮需要满足对应条件（城六区外首套 / 绿色建筑 / 多子女），三条件叠加才能触及橙色封顶。</p>
+
+    <div class="chart-card" id="quotaChart">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">最高贷款额度：基础 + 可上浮（万元）</div>
+          <div class="chart-sub">数据源：国机房资〔2026〕10号 第一、二条</div>
+        </div>
+        <div class="view-toggle" role="tablist" aria-label="图表视图切换">
+          <button class="on" data-view="chart">图表</button>
+          <button data-view="table">表格</button>
+        </div>
+      </div>
+      <div class="legend">
+        <span class="key s1"><i></i>基础最高额度</span>
+        <span class="key s2"><i></i>上浮空间（封顶）</span>
+      </div>
+      <div class="chart-svg-wrap">
+        <svg id="quotaSvg" width="100%" role="img" aria-label="四档贷款额度堆叠条形图：双人首套最高340万元，双人二套300万元，单人首套180万元，单人二套160万元"></svg>
+      </div>
+      <table class="chart-table">
+        <thead>
+          <tr><th>情景</th><th>基础额度（万元）</th><th>可上浮（万元）</th><th>合计封顶（万元）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>双人 · 首套</td><td>240</td><td>100</td><td>340</td></tr>
+          <tr><td>双人 · 二套</td><td>200</td><td>100</td><td>300</td></tr>
+          <tr><td>单人 · 首套</td><td>120</td><td>60</td><td>180</td></tr>
+          <tr><td>单人 · 二套</td><td>100</td><td>60</td><td>160</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>上浮条件速查：</b>城六区（东城、西城、朝阳、海淀、丰台、石景山）户籍家庭在城六区外购首套 +20 万；所购住房符合北京市建筑绿色发展支持政策 +40 万（沿用 2024 办法分档：二星级 +20 / 三星级 +30 / 超低能耗 +40 万，装配式 A/AA/AAA(BJ) 级 +10/20/30 万，单项封顶 40 万）；北京市户籍二孩及以上家庭 +40 万。三项独立累计，触及封顶即止。
+    </div>
+    <div class="note">
+      <b>你的实际额度由公式决定（北京口径，国管历来同标）：</b>① 缴存年限法——1 人缴存每满 1 年可贷 20 万，双方缴存每满 1 年可贷 40 万（按年限较长一方计），<b>双人需缴满 6 年才能顶到 240 万基数</b>；② 还款能力——月供不得超过月收入的 60%，先按每人每月 1778 元扣除基本生活费；③ 二手房不得超最高可抵押价值（评估价约束）。三条取最低，才是「你的额度」。申请前以中央国家机关分中心窗口口径为准（新政后国管版计算细则未见公开全文）。
+    </div>
+  </section>
+
+  <!-- ============================================================
+       三、政策脉络时间线  (RESEARCH:timeline)
+       ============================================================ -->
+  <section class="block" id="timeline">
+    <div class="sec-head"><span class="sec-no">叁</span><h2>政策脉络 · 这不是第一条</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">把 10 号文放回时间线里，才能看清方向与节奏。</p>
+    <div class="timeline" id="timelineBody">
+      <div class="tl-item minor">
+        <div class="tl-date">2024-04</div>
+        <h4>绿色建筑上浮的前身</h4>
+        <p>北京《关于住房公积金支持北京市建筑绿色发展的实施办法》落地：二星级 +20 万 / 三星级 +30 万，装配式 A/AA/AAA(BJ) 级 +10/20/30 万，超低能耗 +40 万——本次「绿建 +40 万」的分档母版。</p>
+      </div>
+      <div class="tl-item minor">
+        <div class="tl-date">2025-10-28</div>
+        <h4>「十五五」规划建议发布</h4>
+        <p>「推动房地产高质量发展，加快构建房地产发展新模式」「建设安全舒适绿色智慧的『好房子』」——需求侧政策总纲就位。</p>
+      </div>
+      <div class="tl-item minor">
+        <div class="tl-date">2025-12-24</div>
+        <h4>国机房资〔2026〕1号施行</h4>
+        <p>二套住房公积金贷款最低首付款比例降至 <b>25%</b>（依据北京市京建发〔2025〕565号文件，2026-01-15 印发）。</p>
+      </div>
+      <div class="tl-item minor">
+        <div class="tl-date">2026-06</div>
+        <h4>国管年内第一发 + 城市更新规划</h4>
+        <p>资金中心 6 月初先发布《关于优化中央国家机关住房公积金提取使用政策的通知》；同月国务院城市更新「十五五」规划明确「深化住房公积金制度改革，扩大使用范围」。</p>
+      </div>
+      <div class="tl-item minor">
+        <div class="tl-date">2026-07-30 / 07-31</div>
+        <h4>政治局定调 + 条例修法启动</h4>
+        <p>7-30 政治局会议：「要切实筑牢安全屏障。稳定房地产市场」——房地产首次纳入「安全屏障」表述框架；次日国常会审议通过《住房公积金管理条例》修改决定草案，方向正是「拓宽提取」。1-7 月地方房地产政策超 680 条，半数以上涉及公积金。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2026-08-07 → 08-08</div>
+        <h4>北京政策包落地（与国管同日施行）</h4>
+        <p>北京市住建委等三部门 8-07 印发《关于进一步优化调整本市房地产政策的通知》，额度、上浮、装修提取数字与国管完全一致，同日施行；同包还包括非京籍限购年限下调、带押过户扩围、二孩家庭二套按首套认定。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2026-08-08</div>
+        <h4>本通知施行（10 号文）</h4>
+        <p>额度大幅提高 + 上浮叠加 + 认房放松 + 带押过户 + 装修提取，五项同时落地；8-20 印发补齐中央机关侧手续，效力追溯至 8-08。</p>
+      </div>
+    </div>
+    <div class="note red">
+      <b>读法：</b>政策链条一环扣一环——<b>7-30 政治局定调 → 8-07 北京落地 → 8-08 双系统同日施行 → 8-20 国管补文</b>；前置动作（降首付、绿建分档、条例修法）早已排好。工具箱正按「降低进入门槛 → 提高杠杆上限 → 疏通交易环节 → 拓宽资金用途」的顺序逐层加码，方向至少已持续两年半。
+    </div>
+  </section>
+
+  <!-- ============================================================
+       四、干系人分析  (RESEARCH:stakeholders 补充)
+       ============================================================ -->
+  <section class="block" id="stakeholders">
+    <div class="sec-head"><span class="sec-no">肆</span><h2>干系人矩阵 · 谁想从这份文件里得到什么</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">同一份文件，七个读者七种读法。看懂每一方的问题，才能预判政策走向和执行细节。</p>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>干系人</th><th>核心关注点</th><th>最佳策略</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>中央决策层</td>
+            <td>政治局会议「稳定房地产市场」要求落地见效，房地产新模式下的需求侧工具起效，市场预期企稳。</td>
+            <td>以公积金这一「低政治成本、高定向性」工具定向加杠杆，优先激活体制内与央企群体的刚性与改善需求，形成示范效应。</td>
+          </tr>
+          <tr>
+            <td>资金管理中心</td>
+            <td>个贷率（贷款余额/归集余额）安全线、资金池流动性、逾期率、政策解释与执行口径统一。</td>
+            <td>额度先给足、叠加规则封顶（+60/+100 万），既响应要求又控制资金池风险敞口；同步要求各部门「做好政策宣传解释」分压咨询量。</td>
+          </tr>
+          <tr>
+            <td>北京市政府</td>
+            <td>全市成交量与价格企稳、城六区外去库存、绿色建筑普及（「好房子」建设）、多子女家庭住房支持兑现。</td>
+            <td>用国管公积金与市属公积金同频联动，把「城六区外 +20 万」「绿色建筑 +40 万」做成引导购房流向的指挥棒。</td>
+          </tr>
+          <tr>
+            <td>在京央企（含民航集团）</td>
+            <td>职工队伍稳定、住房福利口径统一、人事劳资部门政策传达执行成本。</td>
+            <td>作为收文单位迅速转发（你收到的转发邮件正是动作之一），把政策红利转化为人才保留筹码，自身零成本。</td>
+          </tr>
+          <tr>
+            <td>商业银行</td>
+            <td>组合贷中的商贷份额、按揭资产质量、与公积金中心的顺位与抵押操作衔接。</td>
+            <td>积极承接组合贷商贷部分与带押过户的资金监管角色，争夺新政后的优质按揭客户。</td>
+          </tr>
+          <tr>
+            <td>卖房人（存量房）</td>
+            <td>交易周期长短、解押资金成本、带押过户是否真能省去过桥贷款。</td>
+            <td>若剩余贷款为公积金（含组合贷），主动向买方提出用 10 号文第四条流程，缩短链路、减少违约风险。</td>
+          </tr>
+          <tr>
+            <td>缴存职工（你）</td>
+            <td>能贷多少、能提多少、利率优势多大、操作怎么做不错过窗口。</td>
+            <td>先测算自身「余额/基数公式」可贷额与最高额度的孰低值，再规划上浮条件的合规获取路径（详见第伍、捌节）。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       五、民航员工专题  (RESEARCH:aviation 补充)
+       ============================================================ -->
+  <section class="block" id="aviation">
+    <div class="sec-head"><span class="sec-no">伍</span><h2>民航企业员工 · 你的选项与最优解</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">收文范围明确包含「各中央企业人事劳资部门、房管部门」——民航系央企（集团及在京单位）职工属于国管公积金缴存人，本次政策直接适用。按四种典型状态对号入座：</p>
+
+    <div class="policy-grid">
+      <div class="policy-card">
+        <div class="p-no">状态 A</div>
+        <h3>无房 · 刚需首套</h3>
+        <p>最优路径：<b>双人缴存 + 尽量凑齐上浮条件</b>。夫妻双方都在国管系统缴存，首套基准即 240 万；若户籍在城六区、买城六区外（通州/大兴/昌平/亦庄等），再叠加 +20 万。</p>
+        <div class="p-note"><b>加分项：</b>优先看绿色建筑认证项目（+40 万）。两条件叠加即可达 300 万，足以覆盖城六区外大部分刚需盘。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">状态 B</div>
+        <h3>有 1 套 · 已结清贷款 · 想改善</h3>
+        <p>第三条为你们打开的门：<b>不必先卖旧房</b>即可按二套申请公积金贷款（双人 200 万基准 + 上浮 100 万封顶）。</p>
+        <div class="p-note"><b>注意：</b>二套认定以「名下 1 套 + 公积金贷款已结清」为前提；若旧房有未结清公积金贷款，需先结清或走带押过户卖给下家。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">状态 C</div>
+        <h3>在途贷款（8-08 前已受理未放款）</h3>
+        <p>第六条给你的选择权：对比新旧政策下你的<b>实际可贷额与月供</b>。若新政策额度显著变高（尤其双人+上浮），撤销重报更划算。</p>
+        <div class="p-note"><b>代价：</b>审核时效重新计算 + 补交材料。若网签/业主售房节奏紧，先和资金中心确认重报时长再决定。</div>
+      </div>
+      <div class="policy-card">
+        <div class="p-no">状态 D</div>
+        <h3>不买房 · 账户趴着余额</h3>
+        <p>第五条装修提取是「不买房也能取」的新通道：北京市自住住房装修，找<b>有建筑装修装饰工程专业承包资质</b>的装修公司，索取增值税发票，可提发票额 50%（≤25 万）。</p>
+        <div class="p-note"><b>频率管理：</b>同一套房 10 年一次。大装修集中在一次做完、开一张足额发票，比零敲碎打划算。</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>配偶策略：</b>「夫妻双方均为缴存人」才解锁 240/200 万档。若配偶在北京市公积金中心缴存（非国管），两人分属两个系统——国管侧只能按单人 120/100 万口径，但配偶可同日申请市属公积金贷款，两笔合计额度同样可观；具体以资金中心对「双方缴存」的认定口径为准，申请前电话 65990000 确认。
+    </div>
+
+    <h3 style="font-size:17px; margin:30px 0 10px;">利率账：首套该用，二套另说（2026-08）</h3>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>品种</th><th>5 年以上利率</th><th>要点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>公积金 · 首套</td><td><b>2.60%</b></td><td>比北京商贷首套（约 3.05%，LPR 3.5%−45BP）低约 45BP，利差真实存在</td></tr>
+          <tr><td>公积金 · 二套</td><td><b>3.075%</b></td><td>与商贷（约 3.05%，2025-12 起北京不分首二套）基本持平甚至小幅倒挂——<b>二套用公积金的意义在额度与首付，不在利率</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>民航员工专属两条：</b>① <b>调动进京</b>——异地缴存时间可凭原缴存证明合并计算缴存年限，别把外地的年头浪费掉；② <b>购房提取的地域边界</b>——国管职工购房提取限京津冀、户籍地或工作地购房，跨区域置业前先核口径。
+    </div>
+
+    <div class="note red">
+      <b>二孩家庭的双重红利（北京口径）：</b>除了 +40 万额度上浮，北京市户籍二孩及以上多子女家庭购买二套住房，在个人住房贷款中<b>直接认定为首套</b>——首付、利率同时按首套执行。这是整个政策包里叠加最厚的一档人群。
+    </div>
+  </section>
+
+  <!-- ============================================================
+       六、避坑清单  (RESEARCH:pitfalls 校对)
+       ============================================================ -->
+  <section class="block" id="pitfalls">
+    <div class="sec-head"><span class="sec-no">陆</span><h2>避坑清单 · 九个最容易踩的坑</h2></div>
+    <div class="sec-rule"></div>
+
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">1</span>把「最高额度」当成「我的额度」</div>
+      <p>240 万是天花板，不是承诺。实际额度受缴存年限法（每人每年 20 万 / 双人每年 40 万，<b>缴满 6 年才能顶格</b>）、还款能力（月供 ≤ 月收入 60%）、二手房评估价三条公式取最低。年轻双职工最容易被年限卡住。</p>
+      <p class="fix">申请前先在资金中心官网/APP 做额度试算，或到柜台问「按我的缴存记录最多能贷多少」；调动进京的记得提交异地缴存证明合并计算年限。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">2</span>上浮条件「以为满足」——尤其绿色建筑</div>
+      <p>「符合北京市建筑绿色发展支持政策」有官方认定口径（星级绿色建筑/装配式/超低能耗等），销售口头说「我们是绿建」不算数。</p>
+      <p class="fix">要求开发商出示绿色建筑星级或相关认定文件，写入购房合同附件；拿不准的问资金中心认可清单。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">3</span>装修发票开错 —— 资质、名单、票种三重门槛</div>
+      <p>硬条件叠加：开票企业有「建筑装修装饰工程专业承包资质」<b>且在市住建委提供的动态名单内</b>；票种是增值税发票；装修对象是北京市自住住房的产权人或其配偶。装修队代开的材料发票、零售发票大概率不符合；发票金额虚开还涉及骗提入信用记录。</p>
+      <p class="fix">签约前先查企业资质与名单（住建部门渠道），约定「开具建筑服务·装修增值税发票」并注明工程地址与金额，金额与装修规模匹配。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">4</span>带押过户只押了「公积金贷款」这一段</div>
+      <p>10 号文第四条清偿的是卖方<b>公积金贷款（含组合贷）</b>。卖方纯商贷未结清的房子，走的是不动产登记带押过户一般流程，资金监管与放款顺序不同。</p>
+      <p class="fix">谈价时先问清卖方贷款性质；纯商贷房按北京市存量房带押过户通用流程办理，别误用公积金版本。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">5</span>在途贷款盲目撤销重报</div>
+      <p>选新政策=审核时效清零。若你原本的贷款已在放款排队尾段，撤销重报可能错过业主约定的付款节点，产生违约风险。</p>
+      <p class="fix">先电话确认重报全流程耗时，与卖方书面协商顺延，再撤销。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">6</span>多子女上浮的户籍与认定口径</div>
+      <p>「北京市户籍二孩及以上多子女家庭」——户籍在京、子女数以官方口径（户籍登记/出生医学证明）认定。非京籍多子女家庭本条不适用（但其他上浮项仍可用）。</p>
+      <p class="fix">按资金中心要求备齐子女身份证明材料；解读口径以柜台答复为准。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">7</span>二套贷款只看利率 —— 忽视公积金二套利率已倒挂</div>
+      <p>2026-08 口径：公积金二套 3.075% vs 北京商贷约 3.05%（2025-12 起不分首二套）——<b>利率优势消失甚至小幅倒挂</b>。二套用公积金的真实价值是额度上限与首付比例，不是省钱。</p>
+      <p class="fix">二套购房把公积金当「额度工具」，利率敏感的现金流部分交给商贷/组合贷结构设计；已放款的存量公积金利率按国家统一下调节奏走，未放款的自放款日起执行现行利率。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">8</span>指望「商转公」—— 北京根本没有这个通道</div>
+      <p>北京目前<b>不能办理商贷转公积金贷款</b>（公积金中心官方问答口径）。组合贷一经发放，商贷部分永久是商贷；想多占公积金额度只能在一开始就把公积金部分做足。</p>
+      <p class="fix">申请时按「公积金顶格 + 商贷补足」排序结构；注意组合贷两笔期限必须一致（按较短者执行），受房屋剩余年限约束时整体缩短。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">9</span>为了用公积金贷款硬凑「满贷」</div>
+      <p>额度高≠该贷满。公积金贷款利率虽低，月供仍要吃现金流；民航行业薪酬与飞行/排班周期相关，留出安全垫。</p>
+      <p class="fix">月供控制在家庭月收入的安全线内（月供≤月收入 60% 是审批红线，个人建议更保守），组合贷里商贷部分做利率与期限的最优配比。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       七、官方真实诉求  (RESEARCH:intent)
+       ============================================================ -->
+  <section class="block" id="intent">
+    <div class="sec-head"><span class="sec-no">柒</span><h2>政策背后 · 官方到底希望你做什么</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">文件首句即点题：「贯彻落实中共中央政治局会议关于稳定房地产市场的要求」。把六条工具按功能拆开，官方诉求一目了然。</p>
+
+    <div class="duel">
+      <div class="duel-col want">
+        <h3>官方期望的行为</h3>
+        <div class="tagline">文件在「指挥」什么</div>
+        <ul>
+          <li><b>现在就买：</b>额度给到史上最宽 + 8 月 8 日立即施行，制造政策窗口期，推动观望需求入场。</li>
+          <li><b>买城六区外：</b>+20 万定向补贴新区/近郊去库存，配合城市总体规划的人口疏解。</li>
+          <li><b>买好房子：</b>绿色建筑 +40 万，把「好房子」建设从供给端口号变成需求端的真实购买力。</li>
+          <li><b>多生孩子：</b>多子女 +40 万，住房政策与人口政策首次如此深度挂钩。</li>
+          <li><b>换房畅通：</b>认房放松 + 带押过户，疏通「卖一买一」链条，让改善需求先动起来。</li>
+          <li><b>别把钱一直趴着：</b>装修提取让沉淀资金进入消费领域，哪怕不买房。</li>
+        </ul>
+      </div>
+      <div class="duel-col you">
+        <h3>个人的理性应对</h3>
+        <div class="tagline">响应但不盲从</div>
+        <ul>
+          <li><b>有真实需求 → 用足：</b>该买的，这是近年杠杆成本最低、额度最宽的窗口，上浮条件值得主动规划。</li>
+          <li><b>无真实需求 → 不为政策买房：</b>政策不改变房子的居住属性与你的现金流约束，25 万装修提取才是「无房群体的实惠」。</li>
+          <li><b>条件可规划 → 合规获取：</b>购房区位、绿建认证、配偶缴存状态都是可主动选择的变量。</li>
+          <li><b>时间窗口 → 标记节点：</b>8-08 在途选择权、10 年装修提取间隔，都是硬时限，错过即失效。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <b>政策链条（全部官方事实）：</b>2026-04-28 政治局「努力稳定房地产市场，扎实推进城市更新」→ 2026-07-30 政治局「切实筑牢安全屏障。稳定房地产市场」（机构解读：房地产首次进入「安全屏障」表述框架，定位升格）→ 2026-07-31 国常会通过《住房公积金管理条例》修改决定草案（方向：拓宽提取）→ 2026-08-07 北京市政策包 → 2026-08-08 双系统同日施行 → 2026-08-20 国管补文。1-7 月地方政策超 680 条、半数涉公积金；2026 年以来超 60 城扩展提取范围（装修/物业费/加装电梯）。
+    </div>
+    <div class="note red">
+      <b>真实诉求的三层结构：</b>短期——「稳住成交量」：北京上半年二手网签 93,583 套（+5.7%，五年同期新高）但均价同比仍约 -13.5%，量升价稳、以价换量，需要需求端持续输入；中期——「房地产进入安全屏障」：与地方债化解并列，防的是资产负债表风险传染，政策从「刺激」转向「托底+引流」；长期——「新模式换轨」：把公积金从「强制储蓄池」改造成「住房消费引擎」（条例修法、扩大使用范围），公积金沉淀资金被期待流入好房子、城市更新与装修消费。
+    </div>
+  </section>
+
+  <!-- ============================================================
+       八、十五五解读  (RESEARCH:plan)
+       ============================================================ -->
+  <section class="block" id="plan">
+    <div class="sec-head"><span class="sec-no">捌</span><h2>十五五坐标 · 未来五年的住房叙事</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">「十五五」规划期（2026-2030）与本次政策同年开始。公积金新政不是孤立事件，而是房地产新模式在需求侧的第一批落地件。</p>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>「十五五」方向（2025-10 建议原文/规划）</th><th>本次政策的对应点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>「建设安全舒适绿色智慧的『好房子』」</td><td>绿色建筑 / 装配式 / 超低能耗贷款额度上浮至 +40 万——好房子第一次有了需求端补贴价签</td></tr>
+          <tr><td>「加快构建房地产发展新模式」（人、房、地、钱四要素）</td><td>公积金制度本身在改：条例修改草案「拓宽提取」，资金要素向消费端松绑</td></tr>
+          <tr><td>城市更新「十五五」规划：深化公积金改革、扩大使用范围</td><td>带押过户疏通存量房流转；装修提取激活存量房后续消费</td></tr>
+          <tr><td>优化保障性住房供给、因城施策增加改善性供给</td><td>多子女 +40 万且二套认定首套；认房放松；改善需求「卖一买一」链条疏通</td></tr>
+          <tr><td>扩大内需 / 住房消费</td><td>25 万装修提取让不买房的缴存人也把钱花进实体经济</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>专家拆解（观点，非官方）：</b>机构普遍读出「住房消费品化」——房地产的时代逻辑从金融品切换为民生消费品，市场 K 型分化（新房高端化、二手房以价换量）。对个人的含义：买房决策回归居住现金流账，资产升值不再是政策承诺的方向。
+    </div>
+    <div class="note red">
+      <b>一句话结论：</b>官方在十五五开局之年用公积金告诉你——房地产的时代逻辑已从「金融品」切换为「消费品/民生品」，你要做的是在这个新逻辑里做精明的生活决策，而不是赌资产升值。
+    </div>
+  </section>
+
+  <!-- ============================================================
+       九、行动清单
+       ============================================================ -->
+  <section class="block" id="action">
+    <div class="sec-head"><span class="sec-no">玖</span><h2>行动清单 · 本周就能做的八件事</h2></div>
+    <div class="sec-rule"></div>
+    <div class="action-list">
+      <div class="action-item"><div class="a-no">1</div><div class="a-body"><b>查缴存状态</b>登录国管公积金平台核对连续缴存月数、账户余额、月缴存额——这三个数决定你的公式可贷额。</div></div>
+      <div class="action-item"><div class="a-no">2</div><div class="a-body"><b>做额度试算</b>用资金中心官方渠道试算「我最多能贷多少」，与最高额度取孰低，得到你的真实天花板。</div></div>
+      <div class="action-item"><div class="a-no">3</div><div class="a-body"><b>盘点上浮条件</b>户籍（城六区 or not）、家庭子女数、意向楼盘绿建认证——三项对照 +20/+40/+40，算出你的叠加额。</div></div>
+      <div class="action-item"><div class="a-no">4</div><div class="a-body"><b>核配偶系统</b>配偶是国管还是市属缴存？双方均国管=240/200 档；跨系统则有另一种组合打法，先打 65990000 问清口径。</div></div>
+      <div class="action-item"><div class="a-no">5</div><div class="a-body"><b>在途贷款者算新旧账</b>8-08 前已受理未放款：对比新旧实际可贷额与总利息差，差额显著才值得撤销重报（记得先确认审核重计时长）。</div></div>
+      <div class="action-item"><div class="a-no">6</div><div class="a-body"><b>要装修资质清单</b>不买房也要装修的：筛装修公司时第一句问「有没有建筑装修装饰工程专业承包资质、能不能开增值税发票」。</div></div>
+      <div class="action-item"><div class="a-no">7</div><div class="a-body"><b>带押过户问贷款性质</b>看存量房的，谈价前确认卖方贷款是公积金/组合贷还是纯商贷，决定走哪条带押过户路径。</div></div>
+      <div class="action-item"><div class="a-no">8</div><div class="a-body"><b>设 10 年闹钟</b>用过装修提取的，在同一套房下一次提取前满 10 年——记进日历，别到时候才发现白跑。</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>解读对象：<span class="fangsong">《关于优化中央国家机关住房公积金政策的通知》（国机房资〔2026〕10号）</span>，中央国家机关住房资金管理中心 2026-08-20 印发、2026-08-08 施行。</div>
+    <div>本文为个人研究性解读，不构成任何金融/法律建议；具体口径以资金中心官方答复为准。服务热线 65990000。</div>
+    <div>解读生成 2026-08-27 · 主要信息源：中央国家机关住房资金管理中心官网（zzz.gov.cn）、北京市政府 8-07 政策原文（beijing.gov.cn）、北京公积金中心业务问答（gjj.beijing.gov.cn）、新华社/央视政治局会议通稿、十五五规划建议、《北京住房公积金 2025 年年度报告》。</div>
+  </div>
+</footer>
+
+<div class="tooltip" id="tt" role="status" aria-live="polite"></div>
+
+<script>
+/* ============ 主题切换 ============ */
+(function () {
+  var btn = document.getElementById("themeBtn");
+  var root = document.documentElement;
+  var stored = null;
+  try { stored = localStorage.getItem("gjj-theme"); } catch (e) {}
+  if (stored === "dark" || stored === "light") root.setAttribute("data-theme", stored);
+  btn.addEventListener("click", function () {
+    var dark = false;
+    if (root.hasAttribute("data-theme")) {
+      dark = root.getAttribute("data-theme") === "dark";
+    } else {
+      dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("gjj-theme", next); } catch (e) {}
+  });
+})();
+
+/* ============ 视图切换（图表/表格） ============ */
+document.querySelectorAll(".view-toggle").forEach(function (tog) {
+  var card = tog.closest(".chart-card");
+  tog.querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      tog.querySelectorAll("button").forEach(function (x) { x.classList.remove("on"); });
+      b.classList.add("on");
+      card.classList.toggle("table-mode", b.dataset.view === "table");
+    });
+  });
+});
+
+/* ============ 额度堆叠条形图 ============ */
+(function () {
+  var svg = document.getElementById("quotaSvg");
+  var data = [
+    { name: "双人 · 首套", base: 240, up: 100 },
+    { name: "双人 · 二套", base: 200, up: 100 },
+    { name: "单人 · 首套", base: 120, up: 60 },
+    { name: "单人 · 二套", base: 100, up: 60 }
+  ];
+  var tt = document.getElementById("tt");
+
+  function cssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function render() {
+    var W = svg.clientWidth || svg.parentElement.clientWidth;
+    if (W < 320) W = 320;
+    var barH = 22;           /* ≤24px 规范 */
+    var rowGap = 26;
+    var labelW = Math.min(110, W * 0.22);
+    var valW = 58;
+    var plotW = W - labelW - valW - 8;
+    var maxV = 340;
+    var x0 = labelW + 4;
+    var H = data.length * (barH + rowGap) + 30;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("height", H);
+
+    var s1 = cssVar("--series-1"), s2 = cssVar("--series-2");
+    var ink3 = cssVar("--ink-3"), ink = cssVar("--ink"), ink2 = cssVar("--ink-2");
+    var hair = cssVar("--hairline"), base_ = cssVar("--baseline");
+    var cardBg = cssVar("--card");
+
+    var parts = [];
+    parts.push('<defs></defs>');
+
+    /* 发丝网格线：100/200/300 */
+    [100, 200, 300].forEach(function (v) {
+      var gx = x0 + plotW * (v / maxV);
+      parts.push('<line x1="' + gx + '" y1="6" x2="' + gx + '" y2="' + (H - 24) + '" stroke="' + hair + '" stroke-width="1"/>');
+      parts.push('<text x="' + gx + '" y="' + (H - 8) + '" text-anchor="middle" font-size="11" fill="' + ink3 + '" font-variant-numeric="tabular-nums">' + v + '</text>');
+    });
+    /* 基线 */
+    parts.push('<line x1="' + x0 + '" y1="6" x2="' + x0 + '" y2="' + (H - 24) + '" stroke="' + base_ + '" stroke-width="1"/>');
+
+    data.forEach(function (d, i) {
+      var y = 12 + i * (barH + rowGap);
+      var wBase = plotW * (d.base / maxV);
+      var wUp = plotW * (d.up / maxV);
+      var r = 4; /* 数据端圆角，基线端方角 */
+
+      parts.push('<text x="' + (labelW - 6) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="end" font-size="12.5" fill="' + ink + '">' + d.name + '</text>');
+
+      /* 基础段（方角贴基线，圆角接数据端） */
+      parts.push('<path d="M ' + x0 + ' ' + y + ' L ' + (x0 + wBase - r) + ' ' + y +
+        ' Q ' + (x0 + wBase) + ' ' + y + ' ' + (x0 + wBase) + ' ' + (y + r) +
+        ' L ' + (x0 + wBase) + ' ' + (y + barH - r) +
+        ' Q ' + (x0 + wBase) + ' ' + (y + barH) + ' ' + (x0 + wBase - r) + ' ' + (y + barH) +
+        ' L ' + x0 + ' ' + (y + barH) + ' Z" fill="' + s1 + '" data-i="' + i + '" data-part="base" class="seg"/>');
+
+      /* 上浮段：与基础段之间留 2px 表面间隙 */
+      var ux0 = x0 + wBase + 2;
+      parts.push('<path d="M ' + ux0 + ' ' + y + ' L ' + (ux0 + wUp - r) + ' ' + y +
+        ' Q ' + (ux0 + wUp) + ' ' + y + ' ' + (ux0 + wUp) + ' ' + (y + r) +
+        ' L ' + (ux0 + wUp) + ' ' + (y + barH - r) +
+        ' Q ' + (ux0 + wUp) + ' ' + (y + barH) + ' ' + (ux0 + wUp - r) + ' ' + (y + barH) +
+        ' L ' + ux0 + ' ' + (y + barH) + ' Z" fill="' + s2 + '" data-i="' + i + '" data-part="up" class="seg"/>');
+
+      /* 封顶合计：条端外侧直接标注 */
+      var total = d.base + d.up;
+      var tx = ux0 + wUp + 8;
+      parts.push('<text x="' + tx + '" y="' + (y + barH / 2 + 4) + '" font-size="12.5" font-weight="650" fill="' + ink + '" font-variant-numeric="tabular-nums">' + total + '</text>');
+    });
+
+    svg.innerHTML = parts.join("");
+
+    /* 悬停提示：命中区大于标记本身 */
+    svg.querySelectorAll(".seg").forEach(function (seg) {
+      var hit = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      var i = +seg.dataset.i, y = 12 + i * (barH + rowGap);
+      hit.setAttribute("x", x0); hit.setAttribute("y", y - 6);
+      hit.setAttribute("width", plotW); hit.setAttribute("height", barH + 12);
+      hit.setAttribute("fill", "transparent");
+      hit.style.cursor = "default";
+      hit.setAttribute("class", "hit");
+      hit.dataset.i = i;
+      svg.appendChild(hit);
+    });
+
+    svg.querySelectorAll(".hit").forEach(function (h) {
+      function show(ev) {
+        var d = data[+h.dataset.i];
+        tt.replaceChildren();
+        var row1 = mkRow(s1, "基础最高额度", d.base + " 万");
+        var row2 = mkRow(s2, "可上浮（封顶）", d.up + " 万");
+        var tot = document.createElement("div");
+        tot.className = "tt-total";
+        var tn = document.createElement("span"); tn.textContent = "合计封顶";
+        var tv = document.createElement("span"); tv.textContent = (d.base + d.up) + " 万元";
+        tot.append(tn, tv);
+        var title = document.createElement("div");
+        title.className = "tt-name"; title.textContent = d.name;
+        title.style.fontWeight = "650"; title.style.color = ink;
+        tt.append(title, row1, row2, tot);
+        tt.style.opacity = "1";
+        move(ev);
+      }
+      function mkRow(color, name, val) {
+        var r = document.createElement("div"); r.className = "tt-row";
+        var k = document.createElement("span"); k.className = "tt-key"; k.style.background = color;
+        var n = document.createElement("span"); n.className = "tt-name"; n.textContent = name;
+        var v = document.createElement("span"); v.className = "tt-val"; v.textContent = val;
+        r.append(k, n, v);
+        return r;
+      }
+      function move(ev) {
+        var pad = 14;
+        var x = ev.clientX + pad, y = ev.clientY + pad;
+        var r = tt.getBoundingClientRect();
+        if (x + r.width > window.innerWidth - 8) x = ev.clientX - r.width - pad;
+        if (y + r.height > window.innerHeight - 8) y = ev.clientY - r.height - pad;
+        tt.style.left = x + "px"; tt.style.top = y + "px";
+      }
+      function hide() { tt.style.opacity = "0"; }
+      h.addEventListener("pointermove", function (e) { show(e); });
+      h.addEventListener("pointerleave", hide);
+    });
+  }
+
+  render();
+  var reredraw = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(reredraw); reredraw = setTimeout(render, 120);
+  });
+})();
+</script>
+</body>
+</html>
