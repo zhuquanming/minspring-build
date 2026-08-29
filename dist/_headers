@@ -1,6 +1,9 @@
 /*
   X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
+  # SAMEORIGIN 而非 DENY:custom app page(如 /posts/essay--gjj-2026-policy-briefing/)
+  # 以同源 iframe 嵌 /policy/* 静态页,DENY 连自嵌都拒 → .org 白屏(pub-blogweb-appfix)。
+  # SAMEORIGIN 仍拒绝一切跨站嵌入,防 clickjacking 效果不变。
+  X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
