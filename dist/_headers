@@ -6,3 +6,16 @@
 
 /feed.xml
   Content-Type: application/rss+xml; charset=utf-8
+
+# pub-blogweb-imageopt P3:图片长缓存(.org Cloudflare Pages)。
+# /notion/<uuid>/ 路径事实不可变 → 1y immutable;
+# page-cover/ 为数据库封面,命名稳定但可换图 → 降为 1d(后规则覆盖先规则)。
+/notion/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/notion/page-cover/*
+  Cache-Control: public, max-age=86400
+
+# 节气背景 SVG,更新极少
+/images/backgrounds/*
+  Cache-Control: public, max-age=2592000
