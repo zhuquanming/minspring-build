@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>国机房资〔2026〕10号 · 中央国家机关公积金新政解读</title>
-<meta name="description" content="《关于优化中央国家机关住房公积金政策的通知》逐条拆解、干系人分析、民航企业员工选项与最佳实践、政策背后官方诉求与十五五规划脉络。">
+<title>收到看不懂的政策别 pass：我用 AI 读懂了这份公积金新政 · 研究方法演示</title>
+<meta name="description" content="一份差点被 pass 的红头文件的 AI 研究作业：怎么用 AI 解读政策（三步提问法）、怎么避免 AI 的坑（幻觉/过时/张冠李戴）、怎么让 AI 交出可核实的官方链接——从「等别人解读」到「自己初步研究」。">
 <style>
 /* ============================================================
    红头文件 × 数据新闻 · 编辑部风格
@@ -429,6 +429,20 @@ table.matrix tr:hover td { background: var(--red-wash); }
 .pitfall .fix { color: var(--ink); }
 .pitfall .fix::before { content: "✓ "; color: var(--good-text); font-weight: 700; }
 
+/* ============ 提示词块（AI 对话引用） ============ */
+.prompt-block {
+  border: 1px solid var(--hairline); border-radius: 10px;
+  background: var(--card); padding: 14px 18px; margin: 10px 0;
+  font-size: 14px; color: var(--ink-2); line-height: 1.7;
+  box-shadow: var(--shadow);
+}
+.prompt-block .who {
+  font-size: 12px; color: var(--ink-3); letter-spacing: 0.12em;
+  margin-bottom: 6px; font-weight: 600;
+}
+.prompt-block.user { border-left: 3px solid var(--series-1); }
+.prompt-block.ai-note { border-left: 3px solid var(--official-red); }
+
 /* ============ 页脚 ============ */
 footer {
   margin-top: 72px; padding: 30px 0 40px;
@@ -452,14 +466,19 @@ footer a { color: var(--ink-2); }
   <div class="wrap">
     <span class="doc-no serif">国机房资〔2026〕10号</span>
     <nav id="toc">
-      <a href="#policy">政策拆解</a>
-      <a href="#quota">额度测算</a>
-      <a href="#timeline">政策脉络</a>
+      <a href="#intro">序</a>
+      <a href="#howto">三步提问</a>
+      <a href="#ai-pitfalls">AI的坑</a>
+      <a href="#verify">核实</a>
+      <a href="#policy">作业·拆解</a>
+      <a href="#quota">额度</a>
+      <a href="#timeline">脉络</a>
       <a href="#stakeholders">干系人</a>
-      <a href="#aviation">民航员工</a>
-      <a href="#intent">官方诉求</a>
+      <a href="#aviation">民航</a>
+      <a href="#pitfalls">政策坑</a>
+      <a href="#intent">诉求</a>
       <a href="#plan">十五五</a>
-      <a href="#action">行动清单</a>
+      <a href="#action">行动</a>
     </nav>
     <button class="theme-btn" id="themeBtn" title="切换深浅色" aria-label="切换深浅色">🌓</button>
   </div>
@@ -469,8 +488,8 @@ footer a { color: var(--ink-2); }
   <div class="wrap">
     <div class="masthead">
       <div>
-        <div class="kicker">政策解读 · 中央国家机关住房资金管理中心</div>
-        <h1>关于优化中央国家机关<br>住房公积金政策的通知</h1>
+        <div class="kicker">政策研究方法 · AI 作业存档</div>
+        <h1>一份差点被 pass 的红头文件<br>这次我让 AI 教我读懂</h1>
       </div>
       <svg class="seal-stamp" viewBox="0 0 120 120" aria-hidden="true">
         <circle cx="60" cy="60" r="56" fill="none" stroke="var(--seal)" stroke-width="3"/>
@@ -482,13 +501,13 @@ footer a { color: var(--ink-2); }
         <text x="60" y="76" text-anchor="middle" font-size="10" fill="var(--seal)" font-family="Songti SC, STSong, serif">2026 · 08</text>
       </svg>
     </div>
-    <p class="sub">为贯彻落实中共中央政治局会议关于稳定房地产市场的要求，资金管理中心一次性推出「提额度、放开上浮、认房放松、带押过户、装修提取」五合一政策包。本文逐条拆解原文，分析每个干系人的关注点与最佳策略，并站在<strong>民航企业缴存职工</strong>的视角给出选项、避坑与红利获取路径。</p>
+    <p class="sub">单位转发来《关于优化中央国家机关住房公积金政策的通知》（国机房资〔2026〕10号）的那天，我的第一反应和过去每一次一样：<strong>看不懂，直接 pass，默认就默认了</strong>。这次不同——我把原文整篇交给 AI，从「公积金到底是什么」问起，一路问到额度、脉络和官方意图。本文记录这套方法：<strong>怎么问、AI 会在哪里坑你、怎么让它交出可核实的链接</strong>。传统政策解读是等别人嚼碎喂你；AI 时代的政策解读，是自己完成初步研究，为深入调研打底。</p>
     <div class="meta-row">
       <span class="meta-chip">文号 <b>国机房资〔2026〕10号</b></span>
       <span class="meta-chip">印发 <b>2026-08-20</b></span>
       <span class="meta-chip">施行 <b>2026-08-08</b></span>
       <span class="meta-chip">覆盖 <b>中央国家机关 + 在京央企职工</b></span>
-      <span class="meta-chip">解读生成 <b>2026-08-27</b></span>
+      <span class="meta-chip">AI 作业 <b>2026-08-27 · 角度修订 09-01</b></span>
     </div>
 
     <div class="kpi-row">
@@ -519,10 +538,173 @@ footer a { color: var(--ink-2); }
 <main class="wrap">
 
   <!-- ============================================================
-       一、政策拆解
+       壹、序：一份差点被 pass 的文件
+       ============================================================ -->
+  <section class="block" id="intro">
+    <div class="sec-head"><span class="sec-no">壹</span><h2>序 · 一份差点被 pass 的文件</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">每一步都不是「解读政策」，而是演示「怎么研究政策」。</p>
+
+    <div class="note">
+      最近单位转发了一篇政策：《关于优化中央国家机关住房公积金政策的通知》（国机房资〔2026〕10号）。要在以前，我的处理方式和过去十几年的每一次一模一样——<b>看不懂，直接 pass，默认就默认了</b>。红头文件的天书感是天生的：文号、条款、口径、「缴存职工」，每个字都认识，连在一起就是不想读。
+    </div>
+    <div class="note">
+      这次我做了一件不同的事：<b>把原文完整复制给 AI，从最基础的问题开始问</b>——「公积金到底是什么？」「国管和市属有什么区别？」「这一条对普通人意味着什么？」一个下午下来，我不但读懂了这份文件，还顺带摸清了它的政策脉络、各方意图，以及和我相关的每一个数字。
+    </div>
+
+    <div class="duel">
+      <div class="duel-col want">
+        <h3>传统的政策解读</h3>
+        <div class="tagline">别人嚼碎了喂你</div>
+        <ul>
+          <li><b>等解读：</b>等媒体、等自媒体、等「专家说」，拿到手的全是二手结论。</li>
+          <li><b>看情绪：</b>标题决定立场，赞还是骂全看别人怎么剪。</li>
+          <li><b>无核实：</b>解读对不对无从判断，错了也不知道。</li>
+          <li><b>零积累：</b>下一篇政策来了，依然看不懂，依然 pass。</li>
+        </ul>
+      </div>
+      <div class="duel-col you">
+        <h3>AI 时代的政策解读</h3>
+        <div class="tagline">自己初步研究，为深入调研打底</div>
+        <ul>
+          <li><b>问原文：</b>原文直接交给 AI，从基础概念开始问（第贰节）。</li>
+          <li><b>有方法：</b>先补概念、再逐条拆、最后才追问深水区。</li>
+          <li><b>防坑：</b>知道 AI 会幻觉、会过时、会张冠李戴（第叁节）。</li>
+          <li><b>能核实：</b>让 AI 标注来源、交出链接，关键数字回原文对（第肆节）。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note red">
+      <b>先说清楚本文是什么、不是什么：</b>这不是一篇政策解读——我不解读政策，也建议你别信任何单方面的解读。<b>这是一次「用 AI 研究政策」的方法演示与作业存档</b>：正文所有具体数字均出自政策原文（已逐条核对），分析性内容是 AI 生成的推断，仅供你研究时参考。真要办事，请走第肆节列出的官方渠道。
+    </div>
+  </section>
+
+  <!-- ============================================================
+       贰、怎么用 AI 解读政策：三步提问法
+       ============================================================ -->
+  <section class="block" id="howto">
+    <div class="sec-head"><span class="sec-no">贰</span><h2>怎么用 AI 解读政策 · 三步提问法</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">关键是顺序：先补概念，再拆条款，最后才问「这意味着什么」。一上来就问「这政策好不好」，得到的只能是观点垃圾。</p>
+
+    <div class="action-list">
+      <div class="action-item"><div class="a-no">1</div><div class="a-body"><b>冷启动：从最基础的概念问起</b>别让 AI 直接分析。先把原文整篇贴给它，然后问最「蠢」的问题——公积金是什么、国管和市属的区别、缴存/提取/贷款分别指什么。地基打牢，后面每一步的回答质量都完全不同。</div></div>
+      <div class="action-item"><div class="a-no">2</div><div class="a-body"><b>逐条拆解：按固定结构问</b>让 AI 按「原文写了什么 → 有什么没明说的使用条件 → 对我这类人意味着什么」三段式逐条输出。结构化提问逼着 AI 引用原文，而不是自由发挥。</div></div>
+      <div class="action-item"><div class="a-no">3</div><div class="a-body"><b>追问深水区：干系人、脉络、意图</b>概念和条款都清楚了，再问「这份文件背后各方想要什么」「它接在哪条政策脉络上」。这一步的产出是分析性推断——有价值，但要按观点对待，别当事实用。</div></div>
+    </div>
+
+    <h3 style="font-size:17px; margin:30px 0 10px;">本次作业实际用过的提示词（可直接抄）</h3>
+
+    <div class="prompt-block user">
+      <div class="who">第 1 问 · 冷启动补概念</div>
+      这是一份政策原文（粘贴全文）。先不要分析它。请先用大白话给我讲三个背景概念：① 住房公积金到底是什么，和商业贷款的区别是什么；② 中央国家机关公积金（国管）和北京市公积金（市属）是什么关系；③ 「缴存、提取、贷款」三个词分别指什么。就当我完全不懂。
+    </div>
+    <div class="prompt-block user">
+      <div class="who">第 2 问 · 逐条三段式拆解</div>
+      好，现在按条款逐条拆解这份文件。每条用三段式：原文写了什么（引用原句）→ 有哪些没明说的使用条件 → 对「在京工作、正常缴存的我」意味着什么。不确定的地方明确标注「原文未写，以下为推断」。
+    </div>
+    <div class="prompt-block user">
+      <div class="who">第 3 问 · 放进政策脉络</div>
+      把这份文件放进时间线：它接在哪几份政策之后？同期还有哪些相关动作？只列你能确认的事实，标注每一条的时间与出处；拿不准的直接说「不知道」，不要编。
+    </div>
+    <div class="prompt-block user">
+      <div class="who">第 4 问 · 追问意图（观点区）</div>
+      这份文件希望读者做什么？请分「官方期望的行为」和「个人的理性应对」两栏总结，并明确标注哪些内容是你的推断、哪些来自原文或官方表述。
+    </div>
+    <div class="prompt-block user">
+      <div class="who">第 5 问 · 交出核实清单（收尾必做）</div>
+      最后：给你前面所有结论列一张核实清单——每条结论对应原文第几条或哪个官方来源；给我能自行打开核实的链接；标注哪些链接你不确定真实存在。
+    </div>
+
+    <div class="note">
+      <b>为什么要这样问：</b>第 1 问建立共同语境，第 2 问把 AI 锚定在原文上，第 3 问防止它拿旧政策充数，第 4 问把观点显式隔离，第 5 问收口到可核实。五问下来，你对这份政策的了解，已经超过绝大多数只在评论区刷到标题的人——<b>这就是「初步研究」，后面想深挖，方向和材料都齐了。</b>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       叁、AI 的坑
+       ============================================================ -->
+  <section class="block" id="ai-pitfalls">
+    <div class="sec-head"><span class="sec-no">叁</span><h2>AI 的坑 · 五个最容易翻车的点</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">AI 是研究工具，不是权威。这次作业里我实际防了这些坑——每一个都配了动作。</p>
+
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">1</span>幻觉数字与文号</div>
+      <p>AI 能面不改色地编出「国机房资〔2026〕12号」，或给出原文里根本不存在的额度档位。政策类内容里，<b>文号、日期、金额</b>是最容易被编的三类。</p>
+      <p class="fix">每个数字回到原文 Ctrl+F；文号逐字核对。AI 说的每个数字，要么在原文里找到，要么当作没说。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">2</span>知识过时，拿旧政策硬答</div>
+      <p>这份 8 月的新政发布在模型知识截止之后：不开联网的 AI 要么不知道，要么拿 2024 年的旧口径（比如按旧额度）一本正经地给你算账，而且算得头头是道。</p>
+      <p class="fix">永远贴原文全文；有联网/搜索功能就打开；先问一句「你的知识截止到什么时候？确定见过这份文件吗」。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">3</span>张冠李戴：地区、系统傻傻分不清</div>
+      <p>把北京地方口径当成全国通用，把市属公积金政策安到国管头上——两套系统的额度、流程并不相同步。本次研究对象恰好是「国管」系统，网上大量攻略是「市属」的，AI 很容易混着答。</p>
+      <p class="fix">每条结论都追问「这是哪个地区、哪个系统的口径」；本文通篇严格区分国管 / 北京市两套口径。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">4</span>推测混进事实，一本正经</div>
+      <p>AI 的分析（官方意图、市场判断）经常和原文事实混在同一段里输出，读起来同样自信，可信度完全不同。</p>
+      <p class="fix">要求它显式分栏「原文写的 / 我推断的 / 需要核实的」；看分析性段落时自动降权——本文第拾壹、拾贰节就是这样的「观点区」。</p>
+    </div>
+    <div class="pitfall">
+      <div class="pf-head"><span class="x">5</span>链接也是编的</div>
+      <p>AI 给的参考链接可能打不开，也可能指向不相干的旧页面。链接是最容易被幻觉污染的部分。</p>
+      <p class="fix">每个链接亲手点开；打不开或对不上的链接，本身就是「这段存疑」的信号；最终以官网原文为准，别以 AI 的转述为准。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       肆、要链接，去核实
+       ============================================================ -->
+  <section class="block" id="verify">
+    <div class="sec-head"><span class="sec-no">肆</span><h2>要链接，去核实 · 让研究闭环</h2></div>
+    <div class="sec-rule"></div>
+    <p class="sec-lede">AI 负责把「看不懂」变成「初步懂」；核实负责把「初步懂」变成「敢用」。这一步不能外包给 AI。</p>
+
+    <div class="note">
+      <b>让 AI 交出可核实来源的问法：</b>「给你前面的每个结论标注信息来源：来自原文第几条，还是你的推断；给我能自行核实的官方链接；哪些链接你不确定真实存在，请明说。」<b>最后半句最重要</b>——逼 AI 承认链接的不确定性，比逼它给链接更能暴露问题。
+    </div>
+
+    <div class="action-list">
+      <div class="action-item"><div class="a-no">1</div><div class="a-body"><b>文号对原文</b>标题、文号、印发/施行日期，与官方渠道发布的版本逐字核对。</div></div>
+      <div class="action-item"><div class="a-no">2</div><div class="a-body"><b>数字对条款</b>AI 给出的每个金额、比例、年限，回到原文对应条款里找到才算数。</div></div>
+      <div class="action-item"><div class="a-no">3</div><div class="a-body"><b>口径对地区与系统</b>确认每条结论适用于哪个地区、哪个系统（国管 / 市属 / 全国），别拿别人的攻略套自己。</div></div>
+    </div>
+
+    <h3 style="font-size:17px; margin:30px 0 10px;">本次作业实际用过的官方渠道</h3>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>渠道</th><th>用途</th><th>入口</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>中央国家机关住房资金管理中心</td><td>政策原文、官方口径、额度试算</td><td>zzz.gov.cn</td></tr>
+          <tr><td>北京市政府「政策文件」栏目</td><td>北京 8-07 同日政策包对照</td><td>beijing.gov.cn</td></tr>
+          <tr><td>北京公积金中心业务问答</td><td>市属口径对照，甄别旧问答</td><td>gjj.beijing.gov.cn</td></tr>
+          <tr><td>新华社 / 央视通稿</td><td>政治局会议等高层表述原文</td><td>xinhuanet.com / cctv.com</td></tr>
+          <tr><td>国管服务热线</td><td>最终口径——涉钱涉房，打电话</td><td>65990000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note red">
+      <b>一句原则：AI 说的每个数字，要么在原文里找到，要么当作没说。</b>完成核实三件套之后，你对这份政策的认知就是「自己验证过的」，而不是「别人告诉你的」——这是传统解读永远给不了的东西。
+    </div>
+  </section>
+
+  <div class="note">
+    <b>以下为本次 AI 作业的完整存档（伍—拾叁节）：</b>内容全部由 AI 基于原文生成，关键数字已逐条对照原文核实；标注「观点/推断」的小节属于分析性内容，请按参考材料对待。想看方法本身，重点读第贰—肆节；想看这份政策能研究到什么深度，往下翻。
+  </div>
+
+  <!-- ============================================================
+       伍、AI 作业：政策拆解
        ============================================================ -->
   <section class="block" id="policy">
-    <div class="sec-head"><span class="sec-no">壹</span><h2>六项优化 · 逐条拆解</h2></div>
+    <div class="sec-head"><span class="sec-no">伍</span><h2>AI 作业 · 六项优化逐条拆解</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-lede">通知正文只有六条，但每条都有隐藏的使用条件。以下按「原文要点 → 使用条件 → 对你的意义」展开。</p>
 
@@ -570,7 +752,7 @@ footer a { color: var(--ink-2); }
        二、额度测算图表
        ============================================================ -->
   <section class="block" id="quota">
-    <div class="sec-head"><span class="sec-no">贰</span><h2>额度测算 · 基准与上浮封顶</h2></div>
+    <div class="sec-head"><span class="sec-no">陆</span><h2>AI 作业 · 额度测算与封顶</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-lede">蓝为基础额度，橙为上浮空间封顶值。四档情景对比：上浮需要满足对应条件（城六区外首套 / 绿色建筑 / 多子女），三条件叠加才能触及橙色封顶。</p>
 
@@ -617,7 +799,7 @@ footer a { color: var(--ink-2); }
        三、政策脉络时间线  (RESEARCH:timeline)
        ============================================================ -->
   <section class="block" id="timeline">
-    <div class="sec-head"><span class="sec-no">叁</span><h2>政策脉络 · 这不是第一条</h2></div>
+    <div class="sec-head"><span class="sec-no">柒</span><h2>AI 作业 · 政策脉络时间线</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-lede">把 10 号文放回时间线里，才能看清方向与节奏。</p>
     <div class="timeline" id="timelineBody">
@@ -666,7 +848,7 @@ footer a { color: var(--ink-2); }
        四、干系人分析  (RESEARCH:stakeholders 补充)
        ============================================================ -->
   <section class="block" id="stakeholders">
-    <div class="sec-head"><span class="sec-no">肆</span><h2>干系人矩阵 · 谁想从这份文件里得到什么</h2></div>
+    <div class="sec-head"><span class="sec-no">捌</span><h2>AI 作业 · 干系人矩阵</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-lede">同一份文件，七个读者七种读法。看懂每一方的问题，才能预判政策走向和执行细节。</p>
     <div class="matrix-wrap">
@@ -719,7 +901,7 @@ footer a { color: var(--ink-2); }
        五、民航员工专题  (RESEARCH:aviation 补充)
        ============================================================ -->
   <section class="block" id="aviation">
-    <div class="sec-head"><span class="sec-no">伍</span><h2>民航企业员工 · 你的选项与最优解</h2></div>
+    <div class="sec-head"><span class="sec-no">玖</span><h2>AI 作业 · 民航企业员工视角</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-lede">收文范围明确包含「各中央企业人事劳资部门、房管部门」——民航系央企（集团及在京单位）职工属于国管公积金缴存人，本次政策直接适用。按四种典型状态对号入座：</p>
 
@@ -780,8 +962,9 @@ footer a { color: var(--ink-2); }
        六、避坑清单  (RESEARCH:pitfalls 校对)
        ============================================================ -->
   <section class="block" id="pitfalls">
-    <div class="sec-head"><span class="sec-no">陆</span><h2>避坑清单 · 九个最容易踩的坑</h2></div>
+    <div class="sec-head"><span class="sec-no">拾</span><h2>AI 提醒的九个坑 · 涉钱涉房务必亲核</h2></div>
     <div class="sec-rule"></div>
+    <p class="sec-lede">这九个坑由 AI 在拆解过程中主动标出、经与原文及官方问答核对整理——每一条都涉及实际操作，动手前请自行向官方渠道确认。</p>
 
     <div class="pitfall">
       <div class="pf-head"><span class="x">1</span>把「最高额度」当成「我的额度」</div>
@@ -834,7 +1017,7 @@ footer a { color: var(--ink-2); }
        七、官方真实诉求  (RESEARCH:intent)
        ============================================================ -->
   <section class="block" id="intent">
-    <div class="sec-head"><span class="sec-no">柒</span><h2>政策背后 · 官方到底希望你做什么</h2></div>
+    <div class="sec-head"><span class="sec-no">拾壹</span><h2>AI 推断 · 官方诉求（观点区）</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-lede">文件首句即点题：「贯彻落实中共中央政治局会议关于稳定房地产市场的要求」。把六条工具按功能拆开，官方诉求一目了然。</p>
 
@@ -874,7 +1057,7 @@ footer a { color: var(--ink-2); }
        八、十五五解读  (RESEARCH:plan)
        ============================================================ -->
   <section class="block" id="plan">
-    <div class="sec-head"><span class="sec-no">捌</span><h2>十五五坐标 · 未来五年的住房叙事</h2></div>
+    <div class="sec-head"><span class="sec-no">拾贰</span><h2>AI 推断 · 十五五坐标（观点区）</h2></div>
     <div class="sec-rule"></div>
     <p class="sec-lede">「十五五」规划期（2026-2030）与本次政策同年开始。公积金新政不是孤立事件，而是房地产新模式在需求侧的第一批落地件。</p>
     <div class="matrix-wrap">
@@ -903,8 +1086,9 @@ footer a { color: var(--ink-2); }
        九、行动清单
        ============================================================ -->
   <section class="block" id="action">
-    <div class="sec-head"><span class="sec-no">玖</span><h2>行动清单 · 本周就能做的八件事</h2></div>
+    <div class="sec-head"><span class="sec-no">拾叁</span><h2>核实与行动清单 · 本周就能做的八件事</h2></div>
     <div class="sec-rule"></div>
+    <p class="sec-lede">以下动作由 AI 建议整理——执行前先完成第肆节的核实三件套，涉钱涉房以官方答复为准。</p>
     <div class="action-list">
       <div class="action-item"><div class="a-no">1</div><div class="a-body"><b>查缴存状态</b>登录国管公积金平台核对连续缴存月数、账户余额、月缴存额——这三个数决定你的公式可贷额。</div></div>
       <div class="action-item"><div class="a-no">2</div><div class="a-body"><b>做额度试算</b>用资金中心官方渠道试算「我最多能贷多少」，与最高额度取孰低，得到你的真实天花板。</div></div>
@@ -921,9 +1105,9 @@ footer a { color: var(--ink-2); }
 
 <footer>
   <div class="wrap">
-    <div>解读对象：<span class="fangsong">《关于优化中央国家机关住房公积金政策的通知》（国机房资〔2026〕10号）</span>，中央国家机关住房资金管理中心 2026-08-20 印发、2026-08-08 施行。</div>
-    <div>本文为个人研究性解读，不构成任何金融/法律建议；具体口径以资金中心官方答复为准。服务热线 65990000。</div>
-    <div>解读生成 2026-08-27 · 主要信息源：中央国家机关住房资金管理中心官网（zzz.gov.cn）、北京市政府 8-07 政策原文（beijing.gov.cn）、北京公积金中心业务问答（gjj.beijing.gov.cn）、新华社/央视政治局会议通稿、十五五规划建议、《北京住房公积金 2025 年年度报告》。</div>
+    <div>「用 AI 研究政策」方法演示与作业存档 · 研究对象：<span class="fangsong">《关于优化中央国家机关住房公积金政策的通知》（国机房资〔2026〕10号）</span>，中央国家机关住房资金管理中心 2026-08-20 印发、2026-08-08 施行。</div>
+    <div>本文不构成任何政策解读承诺或金融/法律建议；正文数字已对照原文逐条核实，分析性内容为 AI 推断（已标注观点区）。具体口径以资金中心官方答复为准，服务热线 65990000。</div>
+    <div>作业生成 2026-08-27 · 角度修订 2026-09-01（从政策解读切换为 AI 研究方法演示，🤖 Claude Code）· 信息源：中央国家机关住房资金管理中心官网（zzz.gov.cn）、北京市政府 8-07 政策原文（beijing.gov.cn）、北京公积金中心业务问答（gjj.beijing.gov.cn）、新华社/央视政治局会议通稿、十五五规划建议。</div>
   </div>
 </footer>
 
